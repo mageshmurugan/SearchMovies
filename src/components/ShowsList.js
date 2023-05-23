@@ -1,6 +1,6 @@
 import Show from './Show'
 
-function ShowsList ({ showData })  {
+const ShowsList =({ showData })=>  {
 
 
   return (

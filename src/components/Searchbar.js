@@ -5,7 +5,7 @@ import {Button,Container,Form,Navbar} from 'react-bootstrap';
 
 import logo from '../resource/ivshowicon.png'
 
-function Searchbar() {
+const Searchbar= ()=> {
   const [searchText, setSearchText] = useState('harry');
   const [showData, setShowData] = useState([]);
 

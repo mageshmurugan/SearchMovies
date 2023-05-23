@@ -2,9 +2,9 @@ import Footer from "./components/Footer";
 import Searchbar from "./components/Searchbar";
 
 
-function App (){
+const App= ()=>{
   return (
-    <div className="">
+    <div >
       <Searchbar />
       <Footer />
       

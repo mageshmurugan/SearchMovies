@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import axios from 'axios';
 import {Card,ListGroup} from 'react-bootstrap';
 
- function Show  ({show}){
+ const Show=  ({show})=>{
   const [showData, setShowData] = useState([]);
 
     useEffect(()=>{
@@ -19,7 +19,7 @@ import {Card,ListGroup} from 'react-bootstrap';
     
 
   return (
-    <div className='show-card' style={{display:showData.Poster=="N/A"?'none':'block'}}>
+    <div className='show-card' style={{display:showData.Poster==="N/A"?'none':'block'}}>
         <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={showData.Poster} />
       <Card.Body>
