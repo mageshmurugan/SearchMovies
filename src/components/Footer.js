@@ -1,15 +1,15 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import {Container,Navbar} from 'react-bootstrap';
+// import Navbar from 'react-bootstrap/Navbar';
 
 
-const Footer = () => {
+function Footer() {
   return (
     <div className='footer'>
       
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/">
-          &copy; Kaviraj 2022
+          &copy; Magesh 2023
           </Navbar.Brand>
         </Container>
       </Navbar>

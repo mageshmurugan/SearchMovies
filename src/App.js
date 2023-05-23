@@ -1,15 +1,17 @@
 import Footer from "./components/Footer";
 import Searchbar from "./components/Searchbar";
-import ShowsList from "./components/ShowsList";
 
 
-const App = () => {
+function App (){
   return (
-    <div>
+    <div className="">
       <Searchbar />
-      <ShowsList />     
       <Footer />
+      
+      <div className="gradient"></div>
     </div>
+    
+    
   )
 }
 

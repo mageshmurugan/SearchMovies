@@ -1,19 +1,33 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import React,{useEffect,useState} from 'react'
+import axios from 'axios';
+import {Card,ListGroup} from 'react-bootstrap';
 
-const Show = ({key, show}) => {
+ function Show  ({show}){
+  const [showData, setShowData] = useState([]);
+
+    useEffect(()=>{
+      const options={
+        url:`http://www.omdbapi.com/?i=${show}&apikey=863e0dfb`
+      }
+      async function just(){
+        const response = await axios.request(options);
+        setShowData(response.data);
+      }
+      just()
+    },[])
     
+    
+
   return (
-    <div className='show-card'>
+    <div className='show-card' style={{display:showData.Poster=="N/A"?'none':'block'}}>
         <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={show.image.medium} />
+      <Card.Img variant="top" src={showData.Poster} />
       <Card.Body>
-        <Card.Title>{show.name}</Card.Title>
+        <Card.Title>{showData.Title}</Card.Title>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>{show.language}</ListGroup.Item>
-        <ListGroup.Item>Rating: {show.rating.average}</ListGroup.Item>
+        <ListGroup.Item>Language: {showData.Language}</ListGroup.Item>
+        <ListGroup.Item>Rating: {showData.imdbRating}</ListGroup.Item>
       </ListGroup>
     </Card>
     </div>

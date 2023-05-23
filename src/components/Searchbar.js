@@ -1,23 +1,39 @@
-import React from 'react'
+import React,{useState} from 'react'
 import ShowsList from './ShowsList'
-import { useState } from 'react'
 import axios from 'axios';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Navbar from 'react-bootstrap/Navbar';
+import {Button,Container,Form,Navbar} from 'react-bootstrap';
+
 import logo from '../resource/ivshowicon.png'
 
-const Searchbar = () => {
-  const [searchText, setSearchText] = useState('');
+function Searchbar() {
+  const [searchText, setSearchText] = useState('harry');
   const [showData, setShowData] = useState([]);
 
-  async function handleSearch(e) {
-    e.preventDefault()
-    setSearchText()
-    const config = { params: { q: searchText } };
-    const response = await axios.get(`https://api.tvmaze.com/search/shows?q=`, config);
-    setShowData(response.data);
+  async function handleSearch() {
+
+
+
+const options = {
+  method: 'GET',
+  url: 'https://movies-tv-shows-database.p.rapidapi.com/',
+  params: {
+    title:`${searchText}`
+  },
+  headers: {
+    Type: 'get-movies-by-title',
+    'X-RapidAPI-Key': '001ef94159mshe80e2d68a3e78ffp1f19b4jsn767c34da497b',
+    'X-RapidAPI-Host': 'movies-tv-shows-database.p.rapidapi.com'
+  }
+};
+
+
+	const respons = await axios.request(options);
+	// console.log(respons.data.movie_results);
+
+    setSearchText('harry')
+    const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchText}`);
+    // setShowData(response.data);
+    setShowData(respons.data.movie_results);
     
   }
   
@@ -38,7 +54,7 @@ const Searchbar = () => {
       </Navbar.Brand>
         <Navbar>
           
-          <Form className="d-flex" onSubmit={e => { e.preventDefault(); }}>
+          <Form className="d-flex" >
             <Form.Control
               type="search"
               placeholder="Search"
@@ -51,6 +67,7 @@ const Searchbar = () => {
         </Navbar>
       </Container>
     </Navbar>
+    
       <ShowsList showData={showData} />
     </div>
   )

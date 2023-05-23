@@ -1,13 +1,15 @@
 import Show from './Show'
 
-const ShowsList = ({ showData = [] }) => {
+function ShowsList ({ showData })  {
+
+
   return (
     <div className='shows-container'>
       
       {
       showData.map(singleShowData => {
-      if(singleShowData.show.image) {
-        return <Show key = { singleShowData.show.id } show = {singleShowData.show} />
+      if(singleShowData.imdb_id) {
+        return <Show key = { singleShowData.imdb_id } show = {singleShowData.imdb_id} />
       }
     })}
       
