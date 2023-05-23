@@ -27,13 +27,12 @@ const options = {
 };
 
 
-	const respons = await axios.request(options);
+	const response = await axios.request(options);
 	// console.log(respons.data.movie_results);
 
     setSearchText('harry')
-    const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchText}`);
     // setShowData(response.data);
-    setShowData(respons.data.movie_results);
+    setShowData(response.data.movie_results);
     
   }
   

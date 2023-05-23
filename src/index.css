@@ -20,35 +20,8 @@
     /* margin-top: 10px; */
   }
 
-  .app {
-    background: linear-gradient(to right, #2980b9, #6dd5fa); /* Gradient background */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    min-height: 100vh;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    /* text-align: center; */
-    font-family: 'Arial', sans-serif;
-    /* color: #fff; */
+ 
   
-    /* Additional background styles */
-    background-image: url('./resource/square-background-gda90ed601_1280.png');
-    background-color: #f2f2f2; 
-    background-blend-mode: overlay;
-    background-attachment: fixed; 
-    background-size:contain; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-    animation: background-animation 10s infinite; 
-  }
-  
-  /* @keyframes background-animation {
-    0% { background-color: #2980b9; }
-    50% { background-color: #6dd5fa; }
-    100% { background-color: #2980b9; }
-  }
-   */
 
 
   @keyframes rotate {
@@ -83,10 +56,7 @@
     background-color: #222;
     position: relative;
     inset: 0;
-    /* display: flex; */
-    /* place-content: center; */
-    /* align-items: center; */
-    /* overflow: hidden; */
+    
   }
   
   /* This is just to transition when you change the viewport size. */
