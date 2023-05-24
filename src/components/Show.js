@@ -1,21 +1,20 @@
-import React,{useEffect,useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import axios from 'axios';
 import {Card,ListGroup} from 'react-bootstrap';
 
  const Show=  ({show})=>{
   const [showData, setShowData] = useState([]);
-
     useEffect(()=>{
       const options={
         url:`https://www.omdbapi.com/?i=${show}&apikey=863e0dfb`
       }
       async function just(){
         const response = await axios.request(options);
-        console.log(response.data);
         setShowData(response.data);
       }
       just()
     },[])
+      
     
     
 
@@ -29,6 +28,8 @@ import {Card,ListGroup} from 'react-bootstrap';
       <ListGroup className="list-group-flush">
         <ListGroup.Item>Language: {showData.Language}</ListGroup.Item>
         <ListGroup.Item>Rating: {showData.imdbRating}</ListGroup.Item>
+        <ListGroup.Item>Year: {showData.Year}</ListGroup.Item>
+        <ListGroup.Item>Country: {showData.Country}</ListGroup.Item>
       </ListGroup>
     </Card>
     </div>
