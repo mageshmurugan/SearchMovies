@@ -6,7 +6,7 @@ import {Card,ListGroup} from 'react-bootstrap';
   const [showData, setShowData] = useState([]);
     useEffect(()=>{
       const options={
-        url:`https://www.omdbapi.com/?i=${show}&apikey=863e0dfb`
+        url:`https://www.omdbapi.com/?i=${show}&apikey=12c4113c`
       }
       async function just(){
         const response = await axios.request(options);
