@@ -27,8 +27,8 @@ import {Card,ListGroup} from 'react-bootstrap';
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>Language: {showData.Language}</ListGroup.Item>
-        <ListGroup.Item>Rating: {showData.imdbRating}</ListGroup.Item>
-        <ListGroup.Item>Year: {showData.Year}</ListGroup.Item>
+        <ListGroup.Item>IMDB Rating: {showData.imdbRating}</ListGroup.Item>
+        <ListGroup.Item>Release: {showData.Released}</ListGroup.Item>
         <ListGroup.Item>Country: {showData.Country}</ListGroup.Item>
       </ListGroup>
     </Card>
