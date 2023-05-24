@@ -1,11 +1,10 @@
-import React,{useEffect,useState} from 'react'
+import React,{useState} from 'react'
 import axios from 'axios';
 import {Card,ListGroup} from 'react-bootstrap';
 
  const Show=  ({show})=>{
   const [showData, setShowData] = useState([]);
 
-    useEffect(()=>{
       const options={
         url:`http://www.omdbapi.com/?i=${show}&apikey=863e0dfb`
       }
@@ -14,7 +13,6 @@ import {Card,ListGroup} from 'react-bootstrap';
         setShowData(response.data);
       }
       just()
-    },[])
     
     
 
