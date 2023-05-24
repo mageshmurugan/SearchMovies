@@ -49,7 +49,7 @@ const options = {
           height="30"
           className="d-inline-block align-top"
         />{' '}
-        TV Show App
+        Movie Search App
       </Navbar.Brand>
         <Navbar>
           
