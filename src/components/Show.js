@@ -7,7 +7,7 @@ import {Card,ListGroup} from 'react-bootstrap';
 
     useEffect(()=>{
       const options={
-        url:`http://www.omdbapi.com/?i=${show}&apikey=863e0dfb`
+        url:`https://www.omdbapi.com/?i=${show}&apikey=863e0dfb`
       }
       async function just(){
         const response = await axios.request(options);
